@@ -32,6 +32,7 @@ body {
 	height: 100px;
 	margin: 30px 40px;
 	justify-items: start;
+	display: inline-block;
 }
 
 .quote-content {
@@ -40,6 +41,16 @@ body {
 	line-height: 22px;
 	letter-spacing: 0px;
 	text-align: left;
+}
+
+.quote-button {
+	color: #FFFFFF;
+	background: none;
+	border: none;
+	font-size: 18px;
+	float: right;
+	vertical-align: middle;
+	text-align: center;
 }
 
 .quote-author {
