@@ -1,39 +1,31 @@
-const quoteText = document.getElementById('quote-content')
+/*const quoteText = document.getElementById('quote-content')
 const authorText = document.getElementById('quote-author');
-const newQuoteBtn = document.getElementById('quote-button');
+*/
 
-let apiQuotes = [];
+document.getElementById('quote-button').addEventListener('click', getQuote);
+
+function getQuote() {
+	fetch('https://api.api-ninjas.com/v1/quotes?category=success', {
+		method: "GET",
+		headers: {
+			'X-Api-Key': 'tPt7JbqQqLnpzzNq/8NOXA==U2qtoo66BgNzo3n4'
+		}
+	})
+.then(res => {
+	return res.json()
+})
+.then(function(data) {
+	console.log(data)
+	let authorQuote = data.author;
+	let quoteText = data.quote;
+	console.log(authorQuote, quoteText);
+
+	document.getElementById('quote-author').innerHTML = authorQuote;
+	document.getElementById('quote-content').innerHTML = quoteText;
+
+})
+.catch(error => console.log('Error'))
+}
 
 
-  // Show New Quote
-function newQuote() {
-	// Pick a random quote from array
-	const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-	// Check if Author field is blank and replace it with 'Unknown'
-	if (!quote.author) {
-		authorText.textContent = 'Unknown';
-	} else {
-	  authorText.textContent = quote.author;
-	}
-	// Set Quote, Hide Loader
-	quoteText.textContent = quote.en;
-  }
-  
-  // Get Quotes From API
-  async function getQuotes() {
-	const apiUrl = 'https://programming-quotes-api.herokuapp.com/Quotes/random';
-	try {
-	  const response = await fetch(apiUrl);
-	  apiQuotes = await response.json();
-	  newQuote();
-	} catch (error) {
-	  // Catch Error Here
-	}
-  }
-  
-  
-  // Event Listeners
-  newQuoteBtn.addEventListener("click", newQuote);
-  
-  // On Load
-  getQuotes();
+getQuote();
