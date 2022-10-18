@@ -20,15 +20,18 @@ body {
 	min-height: 100%;
 }
 
+/* aplying flex properties for whole page */
 .container {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 }
 
+/* applying styles for Quote part */
 .quote-container {
 	flex-grow: 1;
 	margin: 2em 2em 0 2em;
+
 }
 
 .quote-content {
@@ -37,10 +40,12 @@ body {
 	line-height: 22px;
 	letter-spacing: 0px;
 	text-align: left;
+	display: inline-block;
+	height: 5em;
 }
 
 .quote-button {
-	color: #FFFFFF;
+	color: rgba(241, 247, 247, 0.725);
 	background: none;
 	border: none;
 	font-size: 18px;
@@ -48,6 +53,19 @@ body {
 	vertical-align: middle;
 	text-align: center;
 	align-items: flex-start;
+	transition: transform .2s;
+}
+
+.quote-button:hover {
+	color: #c2ebfe;
+	filter: drop-shadow(3px 5px 12px rgba(208, 242, 245, 0.725));
+	transform: rotate(360deg);
+	transition-duration: 1s;
+}
+
+.quote-button:active {
+	filter: drop-shadow(3px 5px 12px rgba(234, 244, 245, 0.806));
+	transform: translateY(8px);
 }
 
 .quote-author {
@@ -62,7 +80,7 @@ body {
 .time-location {
 	margin-left: 2em;
 	flex-grow: 8;
-	padding-top: 15em;
+	padding-top: 10em;
 }
 
 .time-container {
@@ -74,9 +92,13 @@ body {
 	align-items: baseline;
 }
 
+.moon {
+	filter: drop-shadow(3px 5px 5px rgba(246, 250, 252, 0.699));
+}
+
 .greetings {
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 500;
 	text-transform: uppercase;
 	line-height: 25px;
 	letter-spacing: 5px;
@@ -84,15 +106,16 @@ body {
 	padding: 10px 20px;
 }
 
-#clock {
+.clock {
 	font-size: 100px;
 	font-weight: 700;
 	line-height: 100px;
 	letter-spacing: -2.5px;
 	text-align: left;
+	text-shadow: 0 0 3px rgba(198, 236, 255, 0.699);
 }
 
-#location {
+.location {
 	font-size: 15px;
 	font-weight: 700;
 	line-height: 28px;
@@ -105,7 +128,7 @@ body {
 	margin-left: 3em;
 }
 
-.toggle_btn {
+.toggle-btn {
 	color: #303030;
 	font-size: 12px;
 	font-weight: 700;

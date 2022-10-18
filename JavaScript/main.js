@@ -15,11 +15,11 @@ function getQuote() {
 	return res.json()
 })
 .then(function(data) {
-	console.log(data)
-	let authorQuote = data.author;
-	let quoteText = data.quote;
-	console.log(authorQuote, quoteText);
+	const objQuote = data[0];
+	console.log(objQuote.quote);
 
+    let authorQuote = objQuote.author;
+	let quoteText = objQuote.quote;
 	document.getElementById('quote-author').innerHTML = authorQuote;
 	document.getElementById('quote-content').innerHTML = quoteText;
 
@@ -27,5 +27,3 @@ function getQuote() {
 .catch(error => console.log('Error'))
 }
 
-
-getQuote();
