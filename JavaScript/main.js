@@ -46,7 +46,12 @@ function getGeolocation() {
 .catch(error => console.log('Error'))
 }
 
-
+/**
+ * //getting Timezone object
+ * const timezone = bigObj.timezone;
+ * //getting Location object
+ * const location = bigObj.location;
+ */
 
 /**
  *{
