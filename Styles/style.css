@@ -4,7 +4,8 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 }
 
@@ -47,10 +48,9 @@ body {
 	color: rgba(241, 247, 247, 0.725);
 	background: none;
 	border: none;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	float: right;
-	text-align: center;
-	align-items: flex-start;
+	padding-top: 1.2rem;
 	transition: transform .2s;
 }
 
@@ -70,6 +70,7 @@ body {
 	padding-top: 1.2rem;
 	font-style: normal;
 	font-weight: 700;
+	display: inline-block;
 }
 
 /*main section with location and current time data*/
@@ -118,7 +119,7 @@ body {
 /*toggle section with button and additiona inforation section*/
 .wrapper {
 	flex-grow: 1;
-	margin-left: 3em;
+
 }
 
 .toggle-btn {
@@ -132,20 +133,51 @@ body {
 	padding: 0.6rem;
 	background-color: #FFFFFF;
 	width: 9rem;
-	margin-top: 5rem;
+	margin: 7rem 0 0 2rem;
 }
 
 .time-container {
 	display: flex;
 	flex-flow: row wrap;
-	gap: 3rem;
+	gap: 5rem;
 	align-content: center;
 	justify-content: center;
-	height: 20rem;
+	height: 15rem;
 	overflow: hidden;
 	width: 100%;
-	margin-bottom: 1rem;
 	background-color: rgba(116, 134, 149, 0.74);
+}
+
+.timezone,
+.day-week,
+.day-year,
+.week-number {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.day-week>h6 {
+	margin-top: 0.5rem;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+.timezone>h6 {
+	margin-top: 0.5rem;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+.day-year>h6 {
+	margin-top: 0.5rem;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+.week-number>h6 {
+	margin-top: 0.5rem;
+	font-weight: 700;
+	font-size: 1.2rem;
 }
 
 /*.time-container {
@@ -158,7 +190,7 @@ body {
 	position: absolute !important;
 	bottom: 0;
 	width: 100%;
-	height: 20px;
-	font-size: 7px;
+	height: 2rem;
+	font-size: 0.6rem;
 	text-align: center;
 }
