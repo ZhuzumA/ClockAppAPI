@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-html {
+html, body {
 	height: 100%;
 }
 
@@ -18,27 +18,26 @@ body {
 	height: 100vh;
 	background-size: 100% 100%;
 	min-height: 100%;
+	font-size: 0.8rem;
 }
 
 /* aplying flex properties for whole page */
 .container {
 	display: flex;
 	flex-direction: column;
+	width: 25.8rem;
 	height: 100vh;
 }
 
 /* applying styles for Quote part */
 .quote-container {
 	flex-grow: 1;
-	margin: 2em 2em 0 2em;
-
+	padding: 2rem;
 }
 
 .quote-content {
-	font-size: 10px;
 	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: 0px;
+	line-height: 1rem;
 	text-align: left;
 	display: inline-block;
 	height: 5em;
@@ -48,9 +47,8 @@ body {
 	color: rgba(241, 247, 247, 0.725);
 	background: none;
 	border: none;
-	font-size: 18px;
+	font-size: 1.1rem;
 	float: right;
-	vertical-align: middle;
 	text-align: center;
 	align-items: flex-start;
 	transition: transform .2s;
@@ -69,22 +67,16 @@ body {
 }
 
 .quote-author {
-	padding-top: 20px;
+	padding-top: 1.2rem;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 11px;
-	line-height: 22px;
-
 }
 
+/*main section with location and current time data*/
 .time-location {
-	margin-left: 2em;
+	margin-left: 2rem;
 	flex-grow: 8;
 	padding-top: 10em;
-}
-
-.time-container {
-	visibility: hidden;
 }
 
 .greetings-container {
@@ -97,52 +89,71 @@ body {
 }
 
 .greetings {
-	font-size: 12px;
 	font-weight: 500;
 	text-transform: uppercase;
-	line-height: 25px;
-	letter-spacing: 5px;
+	line-height: 1rem;
+	letter-spacing: 0.2rem;
 	text-align: left;
-	padding: 10px 20px;
+	padding: 0.8rem 1.4rem;
 }
 
 .clock {
-	font-size: 100px;
+	font-size: 7rem;
 	font-weight: 700;
-	line-height: 100px;
-	letter-spacing: -2.5px;
+	line-height: 6rem;
+	letter-spacing: -0.1rem;
 	text-align: left;
 	text-shadow: 0 0 3px rgba(198, 236, 255, 0.699);
 }
 
 .location {
-	font-size: 15px;
+	font-size: 1.2rem;
 	font-weight: 700;
-	line-height: 28px;
-	letter-spacing: 3px;
+	line-height: 2rem;
+	letter-spacing: 0.1rem;
 	text-align: left;
 }
 
+
+/*toggle section with button and additiona inforation section*/
 .wrapper {
 	flex-grow: 1;
 	margin-left: 3em;
 }
 
 .toggle-btn {
-	color: #303030;
-	font-size: 12px;
-	font-weight: 700;
-	line-height: 14px;
-	letter-spacing: 3.75px;
+	color: #787878;
+	font-weight: 600;
+	line-height: 1rem;
+	letter-spacing: 0.2rem;
 	text-align: left;
-	border-radius: 30px;
+	border-radius: 2rem;
 	border: 1px solid #FFFFFF;
-	padding: 10px 10px;
+	padding: 0.6rem;
 	background-color: #FFFFFF;
-	width: 150px;
-	margin-top: 100px;
+	width: 9rem;
+	margin-top: 5rem;
 }
 
+.time-container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 3rem;
+	align-content: center;
+	justify-content: center;
+	height: 20rem;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 1rem;
+	background-color: rgba(116, 134, 149, 0.74);
+}
+
+/*.time-container {
+	visibility: hidden;
+}
+*/
+
+/*footer copyright section*/
 .copyright {
 	position: absolute !important;
 	bottom: 0;
