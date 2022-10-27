@@ -10,6 +10,7 @@
 	<meta property="og:type" content="Single Page Application">
 	<meta property="og:url" content="#">
 	<meta property="og:image" content="resources/mobile/bg-image-nighttime.jpg">
+	<meta http-equiv="refresh" content="30">
 	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +34,7 @@
 			<section id="time-location" class="time-location">
 				<div class="greetings-container">
 					<i class="fa-solid fa-moon moon"></i>
-					<header class="greetings">Good evening</header>
+					<header id="greetings" class="greetings"></header>
 				</div>
 				<div id="clock" class="clock"></div>
 				<div id="location" class="location">In Germany</div>
@@ -48,19 +49,19 @@
 				<div class="time-container">
 					<div class="timezone">
 						<p>Current Zone</p>
-						<h6 id="current-zone">Europe/Germany</h6>
+						<h6 id="current-zone"></h6>
 					</div>
 					<div class="day-year">
 						<p>Day of year</p>
-						<h6 id="day-year">295</h6>
+						<h6 id="day-year"></h6>
 					</div>
 					<div class="day-week">
 						<p>Day of the Week</p>
-						<h6 id="day-week">5</h6>
+						<h6 id="day-week"></h6>
 					</div>
 					<div class="week-number">
 						<p>Week Number</p>
-						<h6 id="week-number">42</h6>
+						<h6 id="week-number"></h6>
 					</div>
 				</div>
 			</div>
