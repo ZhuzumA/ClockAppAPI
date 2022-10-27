@@ -28,100 +28,25 @@ function getQuote() {
 .catch(error => console.log('Error'))
 }
 
-/**getting user's geolocation using IP API*/
-function getGeolocation() {
-	fetch('https://api.ipbase.com/v2/info?ip=&apikey=jCCyOoFPcwi6VA88GDElu5Vps1A3VOamOWSGxHIC', {
-		method: "GET",
-		headers: {
-			'apikey': 'jCCyOoFPcwi6VA88GDElu5Vps1A3VOamOWSGxHIC'
-		}
-	})
+//gettin user's time and date data
+function getTime() {
+	fetch("http://worldtimeapi.org/api/ip")
 .then(res => {
 	return res.json()
 })
 .then(function(data) {
-	/*const objQuote = data[0];*/
 	console.log(data);
+	const objTime = data;
+	//placing data on the page
+	document.getElementById('day-year').innerHTML = objTime.day_of_year;
+	document.getElementById('day-week').innerHTML = objTime.day_of_week;
+	document.getElementById('week-number').innerHTML = objTime.week_number;
+	//getting current time 
+	const timeStr = objTime.datetime;
+	let currentTime = timeStr.substr(11,5);
+	document.getElementById('clock').innerHTML = currentTime;
 })
 .catch(error => console.log('Error'))
 }
 
-/**
- * //getting Timezone object
- * const timezone = bigObj.timezone;
- * //getting Location object
- * const location = bigObj.location;
- */
-
-/**
- *{
-    "timezone": {
-        "id": "Europe/Berlin",
-        "current_time": "2022-10-18T23:47:17+02:00",
-        "code": "CEST",
-        "is_daylight_saving": true,
-        "gmt_offset": 7200
-    },
-    "ip": "77.4.61.151",
-    "type": "v4",
-    "connection": {
-        "asn": 6805,
-        "organization": "Telefonica Germany",
-        "isp": "Telefonica Germany GmbH & Co.OHG"
-    },
-    "location": {
-        "geonames_id": null,
-        "latitude": 48.17570877075195,
-        "longitude": 11.537500381469727,
-        "zip": "80992",
-        "continent": {
-            "code": "EU",
-            "name": "Europe",
-            "name_translated": "Europe"
-        },
-        "country": {
-            "alpha2": "DE",
-            "alpha3": "DEU",
-            "calling_codes": [
-                "+49"
-            ],
-            "currencies": [
-                {
-                    "symbol": "€",
-                    "name": "Euro",
-                    "symbol_native": "€",
-                    "decimal_digits": 2,
-                    "rounding": 0,
-                    "code": "EUR",
-                    "name_plural": "Euros"
-                }
-            ],
-            "emoji": "🇩🇪",
-            "ioc": "GER",
-            "languages": [
-                {
-                    "name": "German",
-                    "name_native": "Deutsch"
-                }
-            ],
-            "name": "Germany",
-            "name_translated": "Germany",
-            "timezones": [
-                "Europe/Berlin",
-                "Europe/Busingen"
-            ],
-            "is_in_european_union": true
-        },
-        "city": {
-            "name": "Munich",
-            "name_translated": "Munich"
-        },
-        "region": {
-            "fips": null,
-            "alpha2": null,
-            "name": "Bavaria",
-            "name_translated": "Bavaria"
-        }
-    }
-}
- */
+getTime();
