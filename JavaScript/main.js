@@ -29,6 +29,7 @@ function getQuote() {
 }
 
 //gettin user's time and location data 
+let currentTime;
 function getTime() {
 	fetch("http://worldtimeapi.org/api/ip")
 .then(res => {
@@ -44,30 +45,25 @@ function getTime() {
 	document.getElementById('current-zone').innerHTML = objTime.timezone;
 	//getting current time 
 	const timeStr = objTime.datetime;
-	let currentTime = timeStr.substr(11,5);
+	currentTime = timeStr.substr(11,5);
 	document.getElementById('clock').innerHTML = currentTime;
 
 	//setting greetings according to the time
 	let greetingsTime = timeStr.substr(11,2);
 	switch (parseInt(greetingsTime)) {
-		case (0||1||2||3||4||5||6||7||8||9||10||11):
-		  console.log('Good mornig');
+		case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 89: case 10: case 11:
 		  document.getElementById('greetings').innerHTML = "Good morning";
 		  break;
 		case 12:
-		  console.log("It's lunch time");
 		  document.getElementById('greetings').innerHTML = "It's lunch time";
 		  break;
-		case (13||14||15||16):
-		  console.log('Good afternoon');
+		case 13: case 14: case 15: case 16:
 		  document.getElementById('greetings').innerHTML = "Good afternoon";
 		  break;
-		case (17||18||19||20):
-		  console.log('Good evening');
+		  case 17: case 18: case 19: case 20:
 		  document.getElementById('greetings').innerHTML = "Good evening";
 		  break;
-		case (21||22||23):
-		  console.log('Good night');
+		case 21: case 22: case 23:
 		  document.getElementById('greetings').innerHTML = "Good night";
 		  break;
 		default:
@@ -78,6 +74,8 @@ function getTime() {
 }
 
 getTime();
+
+console.log(`It's ${currentTime} so far`);
 
 /*getting user's country data
 function getCountry() {

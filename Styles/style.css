@@ -119,7 +119,7 @@ body {
 /*toggle section with button and additiona inforation section*/
 .wrapper {
 	flex-grow: 1;
-
+	overflow: hidden;
 }
 
 .toggle-btn {
