@@ -50,21 +50,32 @@ function getTime() {
 
 	//setting greetings according to the time
 	let greetingsTime = timeStr.substr(11,2);
+	const sunIcon = document.getElementById('sun');
+	const moonIcon = document.getElementById('moon');
+	const bodyImg = document.getElementById('body');
 	switch (parseInt(greetingsTime)) {
 		case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 89: case 10: case 11:
 		  document.getElementById('greetings').innerHTML = "Good morning";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
 		  break;
 		case 12:
 		  document.getElementById('greetings').innerHTML = "It's lunch time";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
 		  break;
 		case 13: case 14: case 15: case 16:
 		  document.getElementById('greetings').innerHTML = "Good afternoon";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
 		  break;
 		  case 17: case 18: case 19: case 20:
 		  document.getElementById('greetings').innerHTML = "Good evening";
+		  sunIcon.remove();
 		  break;
 		case 21: case 22: case 23:
 		  document.getElementById('greetings').innerHTML = "Good night";
+		  sunIcon.remove();
 		  break;
 		default:
 			console.log('Er')
@@ -75,25 +86,17 @@ function getTime() {
 
 getTime();
 
-console.log(`It's ${currentTime} so far`);
 
-/*getting user's country data
-function getCountry() {
-		fetch("ipinfo.io/77.4.46.111?token=5a5e0b15098642")
-	.then(res => {
-		return res.json()
-	})
-	.then(function(data) {
-		const objCountry = data;
-		console.log(objCountry);
-	
-	//	document.getElementById('quote-content').innerHTML = quoteText;
-	
-	})
-	.catch(error => console.log('Error'))
+//getting user's country data
+let timeContainer = document.getElementById("time-container");
+function showHide() {
+	let style=timeContainer.style.display;
+	if(style=="block") {
+		timeContainer.style.display='none';
+	} else {
+		timeContainer.style.display='block';
 	}
+}
 
-	getCountry();
-	*/
 
 

@@ -21,7 +21,7 @@
 	<title>Clock Application</title>
 </head>
 
-<body>
+<body id="body">
 	<main>
 		<!--Main content here-->
 		<div class="container">
@@ -33,20 +33,17 @@
 			</div>
 			<section id="time-location" class="time-location">
 				<div class="greetings-container">
-					<i class="fa-solid fa-moon moon"></i>
+					<i class="fa-solid fa-moon" id="moon"></i>
+					<i class="fa-solid fa-sun" id="sun"></i>
 					<header id="greetings" class="greetings"></header>
 				</div>
 				<div id="clock" class="clock"></div>
 				<div id="location" class="location">In Germany</div>
 			</section>
 			<div class="wrapper">
-				<div class="toggle-btn">
-					<span class="toggle-text">Show more</span>
-					<span class="arrow">
-						<i class="fa-solid fa-angle-down"></i>
-					</span>
-				</div>
-				<div class="time-container">
+				<button type="button" class="toggle-btn" onclick="showHide()">Show more <i
+						class="fa-solid fa-angle-down"></i></button>
+				<div id="time-container" class="time-container">
 					<div class="timezone">
 						<p>Current Zone</p>
 						<h6 id="current-zone"></h6>

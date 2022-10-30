@@ -57,7 +57,7 @@ body {
 .quote-button:hover {
 	color: #c2ebfe;
 	filter: drop-shadow(3px 5px 12px rgba(208, 242, 245, 0.725));
-	transform: rotate(360deg);
+	transform: scale(1.1);
 	transition-duration: 1s;
 }
 
@@ -76,8 +76,7 @@ body {
 /*main section with location and current time data*/
 .time-location {
 	margin-left: 2rem;
-	flex-grow: 8;
-	padding-top: 10em;
+	padding-top: 5em;
 }
 
 .greetings-container {
@@ -85,7 +84,7 @@ body {
 	align-items: baseline;
 }
 
-.moon {
+.fa-moon {
 	filter: drop-shadow(3px 5px 5px rgba(246, 250, 252, 0.699));
 }
 
@@ -120,6 +119,8 @@ body {
 .wrapper {
 	flex-grow: 1;
 	overflow: hidden;
+	margin-top: 2rem;
+	margin-left: 2rem;
 }
 
 .toggle-btn {
@@ -133,7 +134,7 @@ body {
 	padding: 0.6rem;
 	background-color: #FFFFFF;
 	width: 9rem;
-	margin: 7rem 0 0 2rem;
+
 }
 
 .time-container {
@@ -146,6 +147,7 @@ body {
 	overflow: hidden;
 	width: 100%;
 	background-color: rgba(116, 134, 149, 0.74);
+	display: none;
 }
 
 .timezone,
