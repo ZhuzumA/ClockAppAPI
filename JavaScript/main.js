@@ -1,8 +1,26 @@
-/*const quoteText = document.getElementById('quote-content')
-const authorText = document.getElementById('quote-author');
-*/
-
+//setting click function to show more quotes
 document.getElementById('quote-button').addEventListener('click', getQuote);
+
+
+//toggle button shows and hides adittional content area
+(function () {
+function showHide() {
+	let timeContainer = document.getElementById("time-container");
+	let icon = document.getElementById('icon-show');
+	if(timeContainer.style.display == "none") {
+		timeContainer.style.display = "block";
+		icon.classList.remove("fa-angle-down");
+		icon.classList.add("fa-angle-up");
+
+	} else {
+		timeContainer.style.display = "none";
+		icon.classList.remove("fa-angle-up");
+		icon.classList.add("fa-angle-down");
+	}
+}
+document.getElementById('show-btn').addEventListener('click', showHide, true);
+})();
+
 
 /*getting Quotes from Quote API and displaying on the page*/
 function getQuote() {
@@ -48,7 +66,7 @@ function getTime() {
 	currentTime = timeStr.substr(11,5);
 	document.getElementById('clock').innerHTML = currentTime;
 
-	//setting greetings according to the time
+	//setting appropriate greetings according to the daytime (need to work more over this function, in simplier way)
 	let greetingsTime = timeStr.substr(11,2);
 	const sunIcon = document.getElementById('sun');
 	const moonIcon = document.getElementById('moon');
@@ -86,17 +104,6 @@ function getTime() {
 
 getTime();
 
-
-//getting user's country data
-let timeContainer = document.getElementById("time-container");
-function showHide() {
-	let style=timeContainer.style.display;
-	if(style=="block") {
-		timeContainer.style.display='none';
-	} else {
-		timeContainer.style.display='block';
-	}
-}
 
 
 

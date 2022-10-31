@@ -55,8 +55,8 @@ body {
 }
 
 .quote-button:hover {
-	color: #c2ebfe;
-	filter: drop-shadow(3px 5px 12px rgba(208, 242, 245, 0.725));
+	color: #e0f5ff;
+	filter: drop-shadow(3px 5px 12px rgba(238, 254, 255, 0.725));
 	transform: scale(1.1);
 	transition-duration: 1s;
 }
@@ -134,7 +134,19 @@ body {
 	padding: 0.6rem;
 	background-color: #FFFFFF;
 	width: 9rem;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
 
+.toggle-btn:hover {
+	background: #838383;
+	border-color: #838383;
+	color: #f2f2f2;
+	transition: 250ms ease-in-out;
+}
+
+.toggle-btn:active {
+	transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+	font-size: 0.95em;
 }
 
 .time-container {
@@ -142,11 +154,13 @@ body {
 	flex-flow: row wrap;
 	gap: 5rem;
 	align-content: center;
-	justify-content: center;
+	justify-content: flex-start;
 	height: 15rem;
 	overflow: hidden;
 	width: 100%;
-	background-color: rgba(116, 134, 149, 0.74);
+}
+
+#time-container {
 	display: none;
 }
 
@@ -181,11 +195,6 @@ body {
 	font-weight: 700;
 	font-size: 1.2rem;
 }
-
-/*.time-container {
-	visibility: hidden;
-}
-*/
 
 /*footer copyright section*/
 .copyright {
