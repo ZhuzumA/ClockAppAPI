@@ -11,7 +11,6 @@ function showHide() {
 		timeContainer.style.display = "block";
 		icon.classList.remove("fa-angle-down");
 		icon.classList.add("fa-angle-up");
-
 	} else {
 		timeContainer.style.display = "none";
 		icon.classList.remove("fa-angle-up");
@@ -72,7 +71,7 @@ function getTime() {
 	const moonIcon = document.getElementById('moon');
 	const bodyImg = document.getElementById('body');
 	switch (parseInt(greetingsTime)) {
-		case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 89: case 10: case 11:
+		case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
 		  document.getElementById('greetings').innerHTML = "Good morning";
 		  moonIcon.remove();
 		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";

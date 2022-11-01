@@ -16,9 +16,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover !important;
 	width: 100%;
-	height: 100vh;
+	height: 10vh;
 	background-size: 100% 100%;
-	min-height: 100%;
 	font-size: 0.8rem;
 }
 
@@ -26,14 +25,15 @@ body {
 .container {
 	display: flex;
 	flex-direction: column;
-	width: 25.8rem;
+	width: 26rem;
 	height: 100vh;
 }
 
 /* applying styles for Quote part */
 .quote-container {
 	flex-grow: 1;
-	padding: 2rem;
+	margin: 2rem;
+	width: 23rem;
 }
 
 .quote-content {
@@ -42,6 +42,7 @@ body {
 	text-align: left;
 	display: inline-block;
 	height: 5em;
+	width: 100%;
 }
 
 .quote-button {
@@ -51,6 +52,7 @@ body {
 	font-size: 1.2rem;
 	float: right;
 	padding-top: 1.2rem;
+	margin-left: 1.5rem;
 	transition: transform .2s;
 }
 
@@ -118,30 +120,29 @@ body {
 /*toggle section with button and additiona inforation section*/
 .wrapper {
 	flex-grow: 1;
-	overflow: hidden;
 	margin-top: 2rem;
-	margin-left: 2rem;
 }
 
 .toggle-btn {
-	color: #787878;
+	color: #2e2e2eac;
 	font-weight: 600;
 	line-height: 1rem;
 	letter-spacing: 0.2rem;
-	text-align: left;
+	margin: 0 0 1rem 1.5rem;
+	text-align: center;
 	border-radius: 2rem;
 	border: 1px solid #FFFFFF;
 	padding: 0.6rem;
 	background-color: #FFFFFF;
-	width: 9rem;
+	width: 10rem;
 	transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
 .toggle-btn:hover {
-	background: #838383;
-	border-color: #838383;
-	color: #f2f2f2;
 	transition: 250ms ease-in-out;
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.548);
+	border: 1px solid rgba(0, 0, 0, 0.548);
 }
 
 .toggle-btn:active {
@@ -152,12 +153,13 @@ body {
 .time-container {
 	display: flex;
 	flex-flow: row wrap;
-	gap: 5rem;
+	gap: 2rem;
 	align-content: center;
-	justify-content: flex-start;
-	height: 15rem;
-	overflow: hidden;
-	width: 100%;
+	justify-content: center;
+	height: 10rem;
+	background-color: rgba(0, 0, 0, 0.548);
+	width: 100vw;
+	padding: 2em;
 }
 
 #time-container {
@@ -201,7 +203,31 @@ body {
 	position: absolute !important;
 	bottom: 0;
 	width: 100%;
-	height: 2rem;
-	font-size: 0.6rem;
+	height: 1rem;
+	font-size: 0.5rem;
 	text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+	.container {
+		width: 39rem;
+		justify-content: center;
+	}
+
+	.quote-container {
+		width: 35rem;
+
+	}
+}
+
+@media screen and (min-width: 780px) {
+	.container {
+		width: 49rem;
+		justify-content: center;
+	}
+
+	.quote-container {
+		width: 43em;
+
+	}
 }
