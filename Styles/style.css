@@ -33,7 +33,7 @@ body {
 .quote-container {
 	flex-grow: 1;
 	margin: 2rem;
-	width: 23rem;
+
 }
 
 .quote-content {
@@ -42,7 +42,6 @@ body {
 	text-align: left;
 	display: inline-block;
 	height: 5em;
-	width: 100%;
 }
 
 .quote-button {
@@ -52,7 +51,7 @@ body {
 	font-size: 1.2rem;
 	float: right;
 	padding-top: 1.2rem;
-	margin-left: 1.5rem;
+	margin-right: 1.5rem;
 	transition: transform .2s;
 }
 
@@ -156,10 +155,11 @@ body {
 	gap: 2rem;
 	align-content: center;
 	justify-content: center;
-	height: 10rem;
+	height: 20rem;
 	background-color: rgba(0, 0, 0, 0.548);
 	width: 100vw;
 	padding: 2em;
+	margin: 0;
 }
 
 #time-container {

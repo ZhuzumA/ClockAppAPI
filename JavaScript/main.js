@@ -45,6 +45,7 @@ function getQuote() {
 .catch(error => console.log('Error'))
 }
 
+
 //gettin user's time and location data 
 let currentTime;
 function getTime() {
@@ -63,7 +64,82 @@ function getTime() {
 	//getting current time 
 	const timeStr = objTime.datetime;
 	currentTime = timeStr.substr(11,5);
+	//setInterval(function(){Document.getElementById("clock").innerHTML = currentTime},1000);
 	document.getElementById('clock').innerHTML = currentTime;
+
+	//setting appropriate greetings according to the daytime (need to work more over this function, in simplier way)
+	let greetingsTime = timeStr.substr(11,2);
+	const sunIcon = document.getElementById('sun');
+	const moonIcon = document.getElementById('moon');
+	const bodyImg = document.getElementById('body');
+	switch (parseInt(greetingsTime)) {
+		case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
+		  document.getElementById('greetings').innerHTML = "Good morning";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  break;
+		case 12:
+		  document.getElementById('greetings').innerHTML = "It's lunch time";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  break;
+		case 13: case 14: case 15: case 16:
+		  document.getElementById('greetings').innerHTML = "Good afternoon";
+		  moonIcon.remove();
+		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  break;
+		  case 17: case 18: case 19: case 20:
+		  document.getElementById('greetings').innerHTML = "Good evening";
+		  sunIcon.remove();
+		  break;
+		case 21: case 22: case 23: case 0: case 1: case 2: case 3:
+		  document.getElementById('greetings').innerHTML = "Good night";
+		  sunIcon.remove();
+		  break;
+		default:
+			console.log('Er')
+	}
+	return currentTime;
+})
+.catch(error => console.log('Error'))
+}
+
+getTime();
+
+
+
+/*
+//getting data time from api
+
+function getTime() {
+fetch("http://worldtimeapi.org/api/ip")
+.then(res => {
+	return res.json()
+})
+.then(function(data) {
+	console.log(data)
+	return data; 
+})
+}
+
+
+
+
+/*
+//placing time data on the page
+	const objTime = data;
+	document.getElementById('day-year').innerHTML = objTime.day_of_year;
+	document.getElementById('day-week').innerHTML = objTime.day_of_week;
+	document.getElementById('week-number').innerHTML = objTime.week_number;
+	document.getElementById('current-zone').innerHTML = objTime.timezone;
+	
+	//getting current time and creating function that constantly update time 
+	const timeStr = objTime.datetime;
+	let currentTime = timeStr.substr(11,5);
+	//function
+	setInterval(function(){
+    document.getElementById('clock').innerHTML = currentTime;
+}, 1000);
 
 	//setting appropriate greetings according to the daytime (need to work more over this function, in simplier way)
 	let greetingsTime = timeStr.substr(11,2);
@@ -95,14 +171,5 @@ function getTime() {
 		  sunIcon.remove();
 		  break;
 		default:
-			console.log('Er')
-	}
-})
-.catch(error => console.log('Error'))
-}
-
-getTime();
-
-
-
-
+			console.log('Er')}
+			*/
