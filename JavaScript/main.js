@@ -73,17 +73,17 @@ setInterval(setTime, 1000);
 const setData = async () => {
 	const result = await dataPromise;
 	//placing data on the page
-	document.getElementById('day-year').innerHTML = dataPromise.day_of_year;
-	document.getElementById('day-week').innerHTML = dataPromise.day_of_week;
-	document.getElementById('week-number').innerHTML = dataPromise.week_number;
-	document.getElementById('current-zone').innerHTML = dataPromise.timezone;
+	document.getElementById('day-year').innerHTML = result.day_of_year;
+	document.getElementById('day-week').innerHTML = result.day_of_week;
+	document.getElementById('week-number').innerHTML = result.week_number;
+	document.getElementById('current-zone').innerHTML = result.timezone;
 }
-
 setData();
 
 //setting appropriate greetings according to the daytime 
 const setGreetings = async () => {
 	const result = await dataPromise;
+	console.log(result);
 	//getting current time
 	const timeStr = result.datetime;
 	let greetingsTime = timeStr.substr(11,2);
@@ -91,7 +91,7 @@ const setGreetings = async () => {
 	const sunIcon = document.getElementById('sun');
 	const moonIcon = document.getElementById('moon');
 	const bodyImg = document.getElementById('body');
-	
+
 	//placing on the page according to the current time 
 	switch (parseInt(greetingsTime)) {
 		case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
@@ -122,3 +122,23 @@ const setGreetings = async () => {
 	}
 }
 setGreetings();
+
+//getting user's location
+const getLocation = async () => {
+	const result = await dataPromise;
+	const userIp = result.client_ip;
+	const res = await fetch(`http://ip-api.com/json/${userIp}`);
+	if(!res.ok) {
+		throw new Error(`${res.status}: ${await res.text()}`);
+	}
+	return res.json();
+}
+
+//placing location data on the page
+const locationPromise = getLocation();
+const setLocation = async () => {
+	const result = await locationPromise;
+	console.log(result);
+	document.getElementById("location").innerHTML = "In " + result.country;
+}
+setLocation();
