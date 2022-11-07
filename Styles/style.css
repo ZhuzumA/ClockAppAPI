@@ -141,7 +141,7 @@ body {
 	transition: 250ms ease-in-out;
 	color: #ffffff;
 	background-color: rgba(0, 0, 0, 0.548);
-	border: 1px solid rgba(0, 0, 0, 0.548);
+	border: 1px solid rgba(0, 0, 0, 0.399);
 }
 
 .toggle-btn:active {
@@ -152,7 +152,7 @@ body {
 .time-container {
 	display: flex;
 	flex-flow: row wrap;
-	gap: 2rem;
+	gap: 3rem;
 	align-content: center;
 	justify-content: center;
 	height: 20rem;
@@ -216,18 +216,24 @@ body {
 
 	.quote-container {
 		width: 35rem;
+	}
 
+	.time-container {
+		gap: 5rem;
 	}
 }
 
 @media screen and (min-width: 780px) {
 	.container {
 		width: 49rem;
-		justify-content: center;
+		justify-content: flex-end;
 	}
 
 	.quote-container {
 		width: 43em;
+	}
 
+	.time-container {
+		gap: 6rem;
 	}
 }
