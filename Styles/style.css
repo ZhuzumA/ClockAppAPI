@@ -123,6 +123,7 @@ body {
 }
 
 .toggle-btn {
+	border-style: none;
 	color: #2e2e2eac;
 	font-weight: 600;
 	line-height: 1rem;
