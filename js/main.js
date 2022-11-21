@@ -90,7 +90,7 @@ const setGreetings = async () => {
 	//assigning variables the appropriate elements
 	const sunIcon = document.getElementById('sun');
 	const moonIcon = document.getElementById('moon');
-	const bodyImg = document.getElementById('body');
+	let bodyImg = document.getElementById('body');
 
 	//placing on the page according to the current time 
 	switch (parseInt(greetingsTime)) {
