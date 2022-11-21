@@ -2,7 +2,7 @@
 document.getElementById('quote-button').addEventListener('click', getQuote);
 
 
-//toggle button shows and hides adittional content area
+//toggle button shows and hides adittional content area with the time information 
 (function () {
 function showHide() {
 	let timeContainer = document.getElementById("time-container");
@@ -21,7 +21,7 @@ document.getElementById('show-btn').addEventListener('click', showHide, true);
 })();
 
 
-/*getting Quotes from Quote API and displaying on the page*/
+/*getting Quotes from Quote API and displaying on the page as well get more quotes by clicking quote button*/
 function getQuote() {
 	fetch('https://api.api-ninjas.com/v1/quotes?category=success', {
 		method: "GET",
@@ -47,7 +47,7 @@ function getQuote() {
 
 
 
-//getting time data from API 
+//getting time data from the API 
 const getData = async () => {
 	const res = await fetch("http://worldtimeapi.org/api/ip");
 if (!res.ok) {
@@ -72,7 +72,7 @@ setInterval(setTime, 1000);
 //placing aditional time data on the page in wrapped section
 const setData = async () => {
 	const result = await dataPromise;
-	//placing data on the page
+	//placing data on the page in each elements
 	document.getElementById('day-year').innerHTML = result.day_of_year;
 	document.getElementById('day-week').innerHTML = result.day_of_week;
 	document.getElementById('week-number').innerHTML = result.week_number;
@@ -92,7 +92,7 @@ const setGreetings = async () => {
 	const moonIcon = document.getElementById('moon');
 	let bodyImg = document.getElementById('body');
 
-	//placing on the page according to the current time 
+	//placing appropriate icon, greetings as well as image background on the page according to the current time 
 	switch (parseInt(greetingsTime)) {
 		case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
 		  document.getElementById('greetings').innerHTML = "Good morning";
