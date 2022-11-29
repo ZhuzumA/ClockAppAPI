@@ -97,17 +97,17 @@ const setGreetings = async () => {
 		case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11:
 		  document.getElementById('greetings').innerHTML = "Good morning";
 		  moonIcon.remove();
-		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  bodyImg.style.backgroundImage="url(../../resources/day.jpg)";
 		  break;
 		case 12:
 		  document.getElementById('greetings').innerHTML = "It's lunch time";
 		  moonIcon.remove();
-		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  bodyImg.style.backgroundImage="url(../../resources/day.jpg)";
 		  break;
 		case 13: case 14: case 15: case 16:
 		  document.getElementById('greetings').innerHTML = "Good afternoon";
 		  moonIcon.remove();
-		  bodyImg.style.backgroundImage="url(../resources/day.jpg)";
+		  bodyImg.style.backgroundImage="url(../../resources/day.jpg)";
 		  break;
 		  case 17: case 18: case 19: case 20:
 		  document.getElementById('greetings').innerHTML = "Good evening";

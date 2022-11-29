@@ -159,11 +159,12 @@ body {
   gap: 3rem;
   align-content: center;
   justify-content: center;
-  height: 20rem;
+  height: 15rem;
   background-color: rgba(0, 0, 0, 0.548);
   width: 100vw;
-  padding: 2em;
+  padding: 1em;
   margin: 0;
+  padding-bottom: 3rem;
 }
 
 #time-container {
@@ -228,6 +229,7 @@ body {
     padding: 5em 2em;
     margin-left: -3em;
     font-size: larger;
+    width: 110%;
   }
 
   .clock {
@@ -254,8 +256,8 @@ body {
   .time-container {
     gap: 7em;
     margin-left: -5em;
-    padding: 10em 6em;
-    width: fit-content;
+    padding: 0 6em;
+    width: 110%;
   }
   .clock {
     font-size: 10rem;
